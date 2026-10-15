@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARVEL | DATABASE</title>
+    <link rel="icon" type="image/jpeg" href="Marvel.pics/characters.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Exo+2:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="vignette"></div>
+    <div class="stars-bg"></div>
+    <div class="mesh-bg"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container-fluid px-lg-5">
+            <a href="index.html" class="navbar-brand logo">MAR<span>VEL</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#marvelNavbar"
+                aria-controls="marvelNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="marvelNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="marvel_heroes.html" class="nav-link">Heroes</a></li>
+                    <li class="nav-item"><a href="marvel_database.html" class="nav-link active">Database</a></li>
+                    <li class="nav-item"><a href="marvel_history.html" class="nav-link">History</a></li>
+                    <li class="nav-item"><a href="marvel_missions.html" class="nav-link">Missions</a></li>
+                    <li class="nav-item"><a href="marvel_villains.html" class="nav-link">Villains</a></li>
+                    <li class="nav-item"><a href="marvel_join.html" class="nav-link">Recruitment</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container py-4">
+        <div class="section-header reveal">
+            <p>Intelligence Report</p>
+            <h2>Tech & Assets</h2>
+        </div>
+
+        <div class="row g-4 db-container">
+            <div class="col-12 col-lg-6">
+                <div class="db-card reveal">
+                    <h3>Stark Tech Efficiency</h3>
+                    <div class="tech-item">
+                        <div class="tech-label"><span>Arc Reactor Output</span><span>100%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--percent:100%;"></div>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-label"><span>Nano Armor Integrity</span><span>94%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--percent:94%;"></div>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-label"><span>FRIDAY AI Systems</span><span>99%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--percent:99%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="db-card reveal">
+                    <h3>Global Threat Level</h3>
+                    <div class="tech-item">
+                        <div class="tech-label"><span>Multiversal Incursion</span><span>Critical</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--percent:97%; background:#cc0000;"></div>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-label"><span>Cosmic Invasion</span><span>High</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--percent:78%; background:#ff6600;"></div>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-label"><span>Street-Level Crime</span><span>Low</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--percent:20%; background:#00cc44;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="db-card analysis-box reveal">
+                    <h3>S.H.I.E.L.D. Surveillance</h3>
+                    <p style="color:var(--text-dim); font-size:0.9rem;">Real-time monitoring from the Avengers Tower
+                        satellite array. All data classified — Level 7 Clearance required.</p>
+                    <div class="radar-placeholder">
+                        <div class="radar-line"></div>
+                        <span
+                            style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.85rem; color:var(--m-blue); letter-spacing:3px; text-transform:uppercase;">Scanning
+                            for Vibranium Signatures...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">MARVEL</div>
+        <p class="copyright">© 2026 Stark Industries. All rights reserved.</p>
+        <p class="creator">Created by Tanveer Singh</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
